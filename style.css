@@ -1,0 +1,218 @@
+:root {
+    --bg-dark: #1e1e1e;
+    --bg-medium: #282828;
+    --bg-light: #333333;
+    --primary-green: #4CAF50;
+    --text-light: #f0f0f0;
+    --text-medium: #ccc;
+    --text-highlight: #90CAF9;
+}
+
+/* 기본 설정 */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark); 
+    color: var(--text-light); 
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+h2 {
+    color: var(--primary-green);
+    text-align: center;
+    font-size: 2em;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid var(--bg-medium);
+    padding-bottom: 10px;
+}
+
+a {
+    color: var(--text-highlight);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 언어 토글 버튼 */
+.lang-toggle-button {
+    position: fixed; 
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-green); 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000; 
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.lang-toggle-button:hover {
+    background-color: #66BB6A;
+}
+
+/* 헤더 스타일 */
+header {
+    background: var(--bg-medium);
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--primary-green);
+}
+
+.logo {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.logo .fa-check-circle {
+    color: var(--primary-green);
+    margin-right: 10px;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: var(--text-medium);
+}
+
+/* 앱 섹션 */
+.apps-section {
+    padding: 20px 0 60px;
+}
+
+.app-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* 모바일 대응 */
+}
+
+.app-card {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    width: 45%; /* 데스크탑에서 2개씩 배치 */
+    min-width: 300px;
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.3s;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+}
+
+.app-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.app-info h3 {
+    text-align: left;
+    color: var(--primary-green);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.app-info p {
+    color: var(--text-medium);
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.store-button {
+    background: var(--primary-green);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.store-button i {
+    margin-right: 8px;
+}
+
+.store-button:hover {
+    background: #66BB6A;
+    text-decoration: none;
+}
+
+/* 연락처 섹션 */
+.contact-section {
+    padding: 30px 0 50px;
+    background: var(--bg-medium);
+    border-top: 1px solid var(--bg-light);
+}
+
+.contact-details {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--text-medium);
+}
+
+.detail-item i {
+    color: var(--primary-green);
+    width: 20px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.highlight-text {
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+.contact-section .note {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* 푸터 스타일 */
+footer {
+    background: var(--bg-dark);
+    color: #888;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    border-top: 1px solid var(--bg-light);
+}
+
+/* 미디어 쿼리 (모바일 최적화) */
+@media (max-width: 768px) {
+    .app-card {
+        width: 100%; 
+        min-width: auto;
+    }
+    .app-list {
+        gap: 20px;
+    }
+}
