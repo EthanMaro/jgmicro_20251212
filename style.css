@@ -8,7 +8,6 @@
     --text-highlight: #90CAF9;
 }
 
-/* 기본 설정 */
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -19,95 +18,46 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1000px;
+    width: 95%;
+    max-width: 1200px;
     margin: auto;
     padding: 20px 0;
+}
+
+/* Two Column Layout */
+.two-column-layout {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    min-width: 320px;
 }
 
 h2 {
     color: var(--primary-green);
     text-align: center;
-    font-size: 2em;
+    font-size: 1.8em;
     margin: 40px 0 20px;
     border-bottom: 2px solid var(--bg-medium);
     padding-bottom: 10px;
 }
 
-a {
-    color: var(--text-highlight);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* 언어 토글 버튼 */
-.lang-toggle-button {
-    position: fixed; 
-    top: 20px;
-    right: 20px;
-    background-color: var(--primary-green); 
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 1000; 
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.lang-toggle-button:hover {
-    background-color: #66BB6A;
-}
-
-/* 헤더 스타일 */
-header {
-    background: var(--bg-medium);
-    padding: 50px 0;
-    text-align: center;
-    border-bottom: 5px solid var(--primary-green);
-}
-
-.logo {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: var(--text-light);
-    margin-bottom: 5px;
-}
-
-.logo .fa-check-circle {
-    color: var(--primary-green);
-    margin-right: 10px;
-}
-
-.tagline {
-    font-size: 1.2em;
-    color: var(--text-medium);
-}
-
-/* 앱 섹션 */
-.apps-section {
-    padding: 20px 0 60px;
-}
-
+/* App List & Cards */
 .app-list {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap; /* 모바일 대응 */
+    flex-direction: column;
+    gap: 20px;
 }
 
 .app-card {
     background: var(--bg-light);
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    width: 45%; /* 데스크탑에서 2개씩 배치 */
-    min-width: 300px;
     display: flex;
     align-items: flex-start;
     transition: transform 0.3s;
@@ -117,102 +67,72 @@ header {
     transform: translateY(-5px);
 }
 
+/* Optional: Highlight Game Card */
+.game-card {
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
 .app-icon {
     width: 60px;
     height: 60px;
     border-radius: 15px;
-    margin-right: 20px;
+    margin-right: 15px;
     flex-shrink: 0;
 }
 
 .app-info h3 {
     text-align: left;
     color: var(--primary-green);
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 
 .app-info p {
     color: var(--text-medium);
-    font-size: 0.95em;
+    font-size: 0.9em;
     margin-bottom: 15px;
 }
 
+/* Store Button */
 .store-button {
     background: var(--primary-green);
     color: white;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
     font-weight: bold;
     display: inline-flex;
     align-items: center;
-    transition: background-color 0.3s;
+    font-size: 0.85em;
 }
 
-.store-button i {
-    margin-right: 8px;
+.store-button i { margin-right: 8px; }
+.store-button:hover { background: #66BB6A; text-decoration: none; }
+
+/* Language Toggle */
+.lang-toggle-button {
+    position: fixed; top: 20px; right: 20px;
+    background-color: var(--primary-green);
+    color: white; border: none; padding: 10px 15px;
+    font-size: 14px; cursor: pointer; border-radius: 5px;
+    z-index: 1000; font-weight: bold;
 }
 
-.store-button:hover {
-    background: #66BB6A;
-    text-decoration: none;
-}
+/* Header & Contact */
+header { background: var(--bg-medium); padding: 50px 0; text-align: center; border-bottom: 5px solid var(--primary-green); }
+.logo { font-size: 2.5em; font-weight: 700; margin-bottom: 5px; }
+.logo i { color: var(--primary-green); margin-right: 10px; }
+.tagline { font-size: 1.1em; color: var(--text-medium); }
 
-/* 연락처 섹션 */
-.contact-section {
-    padding: 30px 0 50px;
-    background: var(--bg-medium);
-    border-top: 1px solid var(--bg-light);
-}
+.contact-section { padding: 30px 0 50px; background: var(--bg-medium); border-top: 1px solid var(--bg-light); }
+.contact-details { margin: 20px auto; max-width: 600px; }
+.detail-item { margin-bottom: 15px; font-size: 1.1em; color: var(--text-medium); }
+.detail-item i { color: var(--primary-green); width: 20px; margin-right: 10px; text-align: center; }
+.highlight-text { color: var(--text-light); font-weight: bold; }
 
-.contact-details {
-    margin: 20px auto;
-    max-width: 600px;
-    text-align: left;
-}
+footer { background: var(--bg-dark); color: #888; text-align: center; padding: 15px 0; font-size: 0.9em; border-top: 1px solid var(--bg-light); }
+footer a { color: #888; }
 
-.detail-item {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-    color: var(--text-medium);
-}
-
-.detail-item i {
-    color: var(--primary-green);
-    width: 20px;
-    margin-right: 10px;
-    text-align: center;
-}
-
-.highlight-text {
-    color: var(--text-light);
-    font-weight: bold;
-}
-
-.contact-section .note {
-    font-size: 0.9em;
-    color: #888;
-    margin-top: 30px;
-    text-align: center;
-}
-
-/* 푸터 스타일 */
-footer {
-    background: var(--bg-dark);
-    color: #888;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 0.9em;
-    border-top: 1px solid var(--bg-light);
-}
-
-/* 미디어 쿼리 (모바일 최적화) */
+/* Mobile */
 @media (max-width: 768px) {
-    .app-card {
-        width: 100%; 
-        min-width: auto;
-    }
-    .app-list {
-        gap: 20px;
-    }
+    .two-column-layout { flex-direction: column; }
+    .column { width: 100%; }
 }
