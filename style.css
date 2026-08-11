@@ -6,6 +6,8 @@
     --text-light: #f0f0f0;
     --text-medium: #ccc;
     --text-highlight: #90CAF9;
+    --hero-navy: #0d1b2a;
+    --hero-gold: #e8c66f;
 }
 
 body {
@@ -122,6 +124,73 @@ header { background: var(--bg-medium); padding: 50px 0; text-align: center; bord
 .logo i { color: var(--primary-green); margin-right: 10px; }
 .tagline { font-size: 1.1em; color: var(--text-medium); }
 
+/* Hero Section (Fortune Mate) */
+.hero-section {
+    background: linear-gradient(135deg, var(--hero-navy) 0%, #16283d 100%);
+    padding: 45px 0;
+    border-bottom: 1px solid rgba(232, 198, 111, 0.2);
+}
+
+.hero-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(232, 198, 111, 0.25);
+}
+
+.hero-info {
+    flex: 1;
+    min-width: 280px;
+    text-align: left;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(232, 198, 111, 0.15);
+    color: var(--hero-gold);
+    font-size: 0.75em;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    color: var(--hero-gold);
+    font-size: 1.9em;
+    margin: 0 0 10px 0;
+    border: none;
+    text-align: left;
+    padding-bottom: 0;
+}
+
+.hero-desc {
+    color: var(--text-medium);
+    font-size: 0.95em;
+    margin-bottom: 18px;
+    max-width: 560px;
+}
+
+.hero-store-button {
+    background: var(--hero-gold);
+    color: var(--hero-navy);
+}
+
+.hero-store-button:hover {
+    background: #f0d68a;
+}
+
 .contact-section { padding: 30px 0 50px; background: var(--bg-medium); border-top: 1px solid var(--bg-light); }
 .contact-details { margin: 20px auto; max-width: 600px; }
 .detail-item { margin-bottom: 15px; font-size: 1.1em; color: var(--text-medium); }
@@ -135,4 +204,17 @@ footer a { color: #888; }
 @media (max-width: 768px) {
     .two-column-layout { flex-direction: column; }
     .column { width: 100%; }
+
+    .hero-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-info {
+        text-align: center;
+    }
+
+    .hero-title {
+        text-align: center;
+    }
 }
