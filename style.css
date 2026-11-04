@@ -106,6 +106,8 @@ h2 {
     font-size: 0.85em;
 }
 
+.store-button { text-decoration: none; }
+.store-button span { text-decoration: underline; }
 .store-button i { margin-right: 8px; }
 .store-button:hover { background: #66BB6A; text-decoration: none; }
 
